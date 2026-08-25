@@ -1,0 +1,50 @@
+{
+  "name": "bookshop-api",
+  "version": "1.0.0",
+  "description": "API REST para una plataforma de compraventa de libros de segunda mano",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsx watch src/index.ts",
+    "build": "tsc",
+    "lint": "eslint src/",
+    "prettier": "prettier --check src/",
+    "prettier:fix": "prettier --write src/",
+    "typecheck": "tsc --noEmit",
+    "test": "jest --runInBand",
+    "prisma:sync": "npx prisma migrate dev"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^7.9.1",
+    "@sentry/node": "^10.71.0",
+    "bcrypt": "^6.0.0",
+    "bullmq": "^6.2.1",
+    "dotenv": "^17.4.2",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.3",
+    "node-cron": "^4.6.0",
+    "nodemailer": "^9.0.5",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^26.3.0",
+    "@types/node-cron": "^3.0.11",
+    "@types/nodemailer": "^8.0.1",
+    "@types/supertest": "^7.2.1",
+    "@typescript-eslint/eslint-plugin": "^8.68.0",
+    "@typescript-eslint/parser": "^8.68.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.8",
+    "jest": "^30.4.2",
+    "prettier": "^3.9.6",
+    "prisma": "^7.9.1",
+    "supertest": "^7.2.2",
+    "ts-jest": "^29.4.12",
+    "tsx": "^4.23.12",
+    "typescript": "^5.9.3"
+  }
+}
