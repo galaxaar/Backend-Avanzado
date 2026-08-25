@@ -15,7 +15,7 @@
   },
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "^7.9.1",
+    "@prisma/client": "^6.19.3",
     "@sentry/node": "^10.71.0",
     "bcrypt": "^6.0.0",
     "bullmq": "^6.2.1",
@@ -41,7 +41,7 @@
     "eslint-config-prettier": "^10.1.8",
     "jest": "^30.4.2",
     "prettier": "^3.9.6",
-    "prisma": "^7.9.1",
+    "prisma": "^6.19.3",
     "supertest": "^7.2.2",
     "ts-jest": "^29.4.12",
     "tsx": "^4.23.12",
