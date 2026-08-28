@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express';
 import { z } from 'zod';
 import { CreateBookUseCase } from '../../../domain/book/use-cases/create-book';
 import { PrismaBookRepository } from '../../../infrastructure/book/repositories/PrismaBookRepository';
-import { bookFieldsSchema } from '../validators/books-fields-schema';
+import { bookFieldsSchema } from '../validators/book-fields-schema'; 
 
 export const createBookController = async (req: Request, res: Response, next: NextFunction) => {
     try {
