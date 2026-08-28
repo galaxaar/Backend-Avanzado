@@ -1,7 +1,7 @@
 import { Book } from '../Book';
 import { CreateBookUseCaseInput } from '../use-cases/create-book';
 import { EditableBookFields } from '../use-cases/edit-book';
-import { FindBooksUseCaseInput } from '../use-cases/find-book';
+import { FindBooksUseCaseInput } from '../use-cases/find-books';
 
 export interface BookRepository {
     create: (params: CreateBookUseCaseInput) => Promise<Book>;
