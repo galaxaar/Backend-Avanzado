@@ -19,6 +19,7 @@ export class NodemailerEmailService implements EmailService {
         await this.transporter.sendMail({
             from: 'BookShop <noreply@bookshop.com>',
             to: params.email,
+            subject: params.subject,
             text: params.message,
         });
     }
