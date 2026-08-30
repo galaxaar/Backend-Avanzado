@@ -4,6 +4,7 @@ import { environmentService } from '../EnvironmentService';
 
 export class BullQueueService implements QueueService {
     private readonly bookSoldEmailQueue: Queue;
+    private readonly priceSuggestionEmailQueue: Queue;
 
     constructor() {
         const { REDIS_URL } = environmentService.get();
@@ -16,9 +17,15 @@ export class BullQueueService implements QueueService {
         };
         //envio del email de vendido
         this.bookSoldEmailQueue = new Queue('book-sold-email', connection);
+        //envio email bajada de precio
+        this.priceSuggestionEmailQueue = new Queue('price-suggestion-email', connection);
     }
 
     async sendBookSoldEmail(params: { sellerId: number; bookTitle: string; bookPrice: number }) {
         await this.bookSoldEmailQueue.add('book-sold-email-job', params);
+    }
+
+    async sendPriceSuggestionEmail(params: { sellerId: number; bookTitle: string; bookPrice: number }) {
+        await this.priceSuggestionEmailQueue.add('price-suggestion-email-job', params);
     }
 }

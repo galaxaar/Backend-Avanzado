@@ -124,13 +124,23 @@ export class PrismaBookRepository implements BookRepository {
             where,
             skip: (page - 1) * limit,
             take: limit,
-        });  
+        });
         const total = await this.prisma.book.count({ where });
 
         return {
             books: prismaBooks.map((prismaBook) => this.restore(prismaBook)),
             total,
         };
+    }
+
+    async findPublishedOlderThan(date: Date): Promise<Book[]> {
+        const prismaBooks = await this.prisma.book.findMany({
+            where: {
+                status: 'PUBLISHED',
+                createdAt: { lt: date },
+            },
+        });
+        return prismaBooks.map((prismaBook) => this.restore(prismaBook));
     }
 
 

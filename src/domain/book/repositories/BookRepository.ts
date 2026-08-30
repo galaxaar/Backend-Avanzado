@@ -11,4 +11,5 @@ export interface BookRepository {
     markAsSold: (id: number, soldAt: Date) => Promise<Book>;
     findByOwnerId: (ownerId: number) => Promise<Book[]>;
     findMany: (criteria: FindBooksUseCaseInput) => Promise<{ books: Book[]; total: number }>;
+    findPublishedOlderThan: (date: Date) => Promise<Book[]>;
 }
